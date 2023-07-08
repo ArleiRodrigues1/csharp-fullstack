@@ -1,0 +1,124 @@
+<app-title [title]="'Perfil'" [botaoListar]="false"></app-title>
+<div class="card rounded shadow-sm mb-5">
+  <form>
+    <div class="row p-3">
+      <div class="col-lg-3 pt-1" style="margin-top: 75px !important;">
+        <div class="card mb-3">
+          <div class="card-header"></div>
+          <div class="d-flex align-self-center pt-3">
+            <a>
+              <img
+                src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R"
+                name="aboutme" width="100" height="100" class="rounded-circle">
+            </a>
+          </div>
+          <div class="card-body">
+            <div class="h7 text-center mb-3">@UserName</div>
+            <div class="h7 text-bold pb-1"><b>Nome:</b> User </div>
+            <div class="h7">
+              Developer of web applications
+            </div>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-6 text-center border-right">
+                  <div class="h5"></div>
+                  <div class="h6 text-muted" style="font-size: 13px !important">Eventos Ministrados</div>
+                  <p class="text-success">45</p>
+                </div>
+                <div class="col-6 text-center">
+                  <div class="h5"></div>
+                  <div class="h6 text-muted" style="font-size: 13px !important">Eventos Participados</div>
+                  <p class="text-success">100</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="card-footer"></div>
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div>
+          <h5 class="pt-3 text-center">Editar Perfil</h5>
+          <br>
+        </div>
+        <div class="form-row mt-1">
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01"><b>Formação</b></label>
+            <select class="form-select" id="inputGroupSelect01">
+              <option selected></option>
+              <option value="0">Não Quero</option>
+              <option value="1">Tecnólogo(a)</option>
+              <option value="2">Bacharel</option>
+              <option value="3">Especialista</option>
+              <option value="4">Pós Graduado(a)</option>
+              <option value="5">Mestre</option>
+              <option value="6">Doutor(a)</option>
+              <option value="7">Pós Doc</option>
+            </select>
+          </div>
+          <div class="row">
+            <div class="input-group col-lg-6 mb-4">
+              <div class="title-1">
+                <b class="ms-1">Nome</b>
+                <input id="firstName" type="text" name="firstname" placeholder="Nome"
+                 class="form-control bg-white border-left-0 border-md">
+              </div>
+              <div class="title-2">
+                <b class="ms-4">Sobrenome</b>
+                <input id="lastName" type="text" name="lastname" placeholder="Sobrenome"
+                  class="form-control bg-white border-left-0 border-md ms-4">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-group col-lg-12 mb-4">
+            <div class="title-3">
+              <b class="ms-1">Email</b>
+              <input id="email" type="email" name="email" placeholder="Email"
+                class="form-control bg-white border-left-0 border-md">
+            </div>
+            <div class="title-4">
+              <b class="ms-3">Telefone</b>
+              <input id="tel" type="tel" name="telefone" placeholder="telefone"
+                class="form-control bg-white border-left-0 border-md ms-3">
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01"><b>Função</b></label>
+            <select class="form-select" id="inputGroupSelect01">
+              <option selected></option>
+              <option value="0">Palestrante</option>
+              <option value="1">Participante</option>
+            </select>
+          </div>
+          <form class="col-12">
+            <b>Descrição</b>
+            <input type="text" class="form-control" />
+          </form>
+        </div>
+        <div>
+          <h5 class="pt-3 border-bottom">Alterar Senha</h5>
+        </div>
+        <div class="row">
+          <div class="input-group col-lg-6 mb-4">
+            <input id="password" type="password" name="password" placeholder="Nova Senha"
+              class="form-control bg-white border-left-0 border-md">
+            <input id="password" type="password" name="password" placeholder="Confirme a Senha"
+              class=" ms-2 form-control bg-white border-left-0 border-md">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="d-flex ms-auto">
+        <button class="btn btn-outline-secondary border" >
+          Cancelar Alterações
+        </button>
+        <button class="btn btn-primary mt-1 ms-auto">Salvar Alterações</button>
+      </div>
+    </div>
+  </form>
+</div>

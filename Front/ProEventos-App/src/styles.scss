@@ -3,17 +3,6 @@
 @import '../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css';
 @import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 
-header {
-  background: var(--black) !important;
+header{
+  background-color: #FFF !important;
 }
-
-a.navbar-brand{
-  color: var(--white) !important;
-}
-
-li.nav-item{
-  font-weight: 700 !important;
-}
-
-
-

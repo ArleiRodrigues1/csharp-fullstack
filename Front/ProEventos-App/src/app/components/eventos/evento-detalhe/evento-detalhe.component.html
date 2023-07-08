@@ -1,0 +1,56 @@
+<div class="card rounded shadow-sm mb-5">
+  <form>
+    <div class="row p-3">
+      <div>
+        <h5 class="pt-3 text-center">Adicionar Evento</h5>
+      </div>
+      <div class="input mb-4">
+        <b>Tema</b>
+        <input id="text" type="text" name="tema" placeholder="Insira o Tema" class="form-control bg-white ">
+      </div>
+      <div class="row">
+        <b>Local <span>Data</span></b>
+        <div class="input-group col-lg-6 mb-4">
+          <!-- Local -->
+          <input id="local" type="text" name="local" placeholder="Insira o Local"
+            class="form-control bg-white border-left-0 border-md">
+          <!-- Data e Hora -->
+            <input id="datetime-local" type="datetime-local" name="datetime-local" placeholder="Insira a data e a hora"
+            class="form-control bg-white border-left-0 border-md ms-2">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="row">
+            <div class="input-group col-lg-6 mb-4">
+            <!-- Qtd Pessoas -->
+            <div class="title-1">
+              <b class="ms-1">Público</b>
+              <input id="firstName" type="number" name="qtdPessoas" placeholder="Público"
+                class="form-control bg-white border-left-0 border-md">
+            </div>
+              <!-- Email -->
+            <div class="title-2">
+              <b class="ms-1">Email</b>
+              <input id="email" type="email" name="email" placeholder="Digite o Email"
+                class="form-control bg-white border-left-0 border-md ms-1">
+                <!-- Telefone -->
+            </div>
+              <div class="title-3">
+                <b class="ms-2">Telefone</b>
+                <input id="telefone" type="tel" name="telefone" placeholder="(00) 00000-0000"
+                class="ms-2 form-control bg-white border-left-0 border-md">
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="d-flex ms-auto">
+        <button class="btn btn-outline-secondary border">
+          Cancelar
+        </button>
+        <button class="btn btn-primary mt-1 ms-auto">Salvar Evento</button>
+      </div>
+    </div>
+  </form>
+</div>
