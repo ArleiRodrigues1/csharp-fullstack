@@ -4,8 +4,8 @@ import { Component, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { ToastrService } from 'ngx-toastr';
 
-import { EventoService } from '../../../services/Evento.service';
-import { Evento } from 'src/app/models/Evento';
+import { EventoService } from '@app/services/Evento.service';
+import { Evento } from '@app/models/Evento';
 import { Router } from '@angular/router';
 
 @Component({

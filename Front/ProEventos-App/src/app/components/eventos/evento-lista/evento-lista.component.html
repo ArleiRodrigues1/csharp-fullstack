@@ -4,7 +4,7 @@
     <div class="flex-fill pe-3">
       <div class="input-group flex-nowrap mb-3">
         <div class="input-group-text" id="addon-wrapping">Filtro</div>
-        <input type="text" class="form-control" placeholder="Filtrar por Tema e Local" [(ngModel)]="filtroLista" />
+        <input type="text" class="form-control" placeholder="Filtrar por Tema e Local"/>
       </div>
     </div>
     <div>
@@ -72,7 +72,7 @@
 <ng-template #template>
   <div class="modal-header">
     <h4 class="modal-title pull-left">Excluir</h4>
-    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true" class="visually-hidden">&times;</span>
     </button>
   </div>

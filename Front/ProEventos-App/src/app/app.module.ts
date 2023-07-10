@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -35,9 +35,9 @@ import { RegistrationComponent } from './components/user/registration/registrati
     AppComponent,
     EventosComponent,
     PalestrantesComponent,
-    PerfilComponent,
-    DashboardComponent,
     ContatosComponent,
+    DashboardComponent,
+    PerfilComponent,
     TitleComponent,
     DateTimeFormatPipe,
     EventoDetalheComponent,
@@ -45,20 +45,21 @@ import { RegistrationComponent } from './components/user/registration/registrati
     UserComponent,
     LoginComponent,
     RegistrationComponent
-   ],
+  ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserModule,
-    FormsModule,
-    BsDropdownModule.forRoot(),
+    BrowserAnimationsModule,
     CollapseModule.forRoot(),
     TooltipModule.forRoot(),
+    BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
     ToastrModule.forRoot({
-      timeOut: 3000,
-      positionClass: 'toast-bottom-left',
+      timeOut: 4000,
+      positionClass: 'toast-bottom-right',
       preventDuplicates: true,
       progressBar: true
     }),
@@ -67,7 +68,6 @@ import { RegistrationComponent } from './components/user/registration/registrati
     EventoService
   ],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-
 export class AppModule { }
-

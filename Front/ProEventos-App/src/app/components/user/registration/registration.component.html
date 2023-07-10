@@ -1,78 +1,82 @@
 <div class="container">
-  <div class="row py-5 mt-4 align-items-center">
+  <div class="row py-5 align-items-center">
       <!-- For Demo Purpose -->
-      <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+      <div class="col-md-5 pr-lg-5 mb-md-0">
           <img src="../../../../assets/img/registration.svg" alt="" class="img-fluid mb-3 d-none d-md-block">
           <h1>Crie sua Conta</h1>
       </div>
-
       <!-- Registeration Form -->
       <div class="col-md-7 col-lg-6 ml-auto">
-          <form action="#">
-              <div class="row">
-                  <!-- Name -->
-                  <div class="input-group col-lg-6 mb-4">
-                      <div class="input-group-prepend">
-                          <!-- <span class="input-group-text bg-white px-4 border-md border-right-0">
-                              <i class="fa fa-user text-muted"></i>
-                          </span> -->
-                      </div>
-                      <input id="firstName" type="text" name="firstname" placeholder="Nome" class="form-control bg-white border-left-0 border-md">
-                      <input id="lastName" type="text" name="lastname" placeholder="Sobrenome" class="form-control bg-white border-left-0 border-md ms-1">
-                  </div>
-                  <!-- Email Address -->
-                  <div class="input-group col-lg-12 mb-4">
-                      <div class="input-group-prepend">
-                          <!-- <span class="input-group-text bg-white px-4 border-md border-right-0">
-                              <i class="fa fa-envelope text-muted"></i>
-                          </span> -->
-                      </div>
-                      <input id="email" type="email" name="email" placeholder="Email" class="form-control bg-white border-left-0 border-md">
-                  </div>
-                  <!-- Password -->
-                  <div class="input-group col-lg-6 mb-4">
-                      <div class="input-group-prepend">
-                          <!-- <span class="input-group-text bg-white px-4 border-md border-right-0">
-                          </span> -->
-                      </div>
-                      <input id="password" type="password" name="password" placeholder="Digite a senha" class="form-control bg-white border-left-0 border-md">
-                  </div>
-                  <!-- Password Confirmation -->
-                  <div class="input-group col-lg-6 mb-4">
-                      <div class="input-group-prepend">
-                          <!-- <span class="input-group-text bg-white px-4 border-md border-right-0">
-                              <i class="fa fa-lock text-muted"></i>
-                          </span> -->
-                      </div>
-                      <input id="passwordConfirmation" type="text" name="passwordConfirmation" placeholder="Confirme a senha" class="form-control bg-white border-left-0 border-md">
-                  </div>
-                  <div class="form-check" style="margin-left: 12px !important;">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                    <label class="form-check-label" for="defaultCheck1">
-                      Eu concordo com os <a  href="">Termos de uso</a>
-                    </label>
-                  </div>
-                  <!-- Submit Button -->
-                  <div class="form-group col-lg-12 d-flex justify-content-center">
-                      <a href="/user/login" class="btn btn-primary btn-block py-2 mt-3">
-                          <span class="font-weight-bold">Criar conta</span>
-                      </a>
-                  </div>
-                  
-                  <!-- Divider Text -->
-                  <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
-                      <div class="border-bottom w-100 ml-5"></div>
-                      <span class="px-2 small text-muted font-weight-bold text-muted">Ou</span>
-                      <div class="border-bottom w-100 mr-5"></div>
-                  </div>
-
-                  <!-- Already Registered -->
-                  <div class="text-center w-100">
-                      <p class="text-muted font-weight-bold">Já tem uma conta? <a href="user/login" class="text-primary ml-2">Login</a></p>
-                  </div>
-
+        <form [formGroup]="form" class="p-1">
+          <div class="row">
+            <div class="form-group col-sm-6">
+              <label>Nome</label>
+              <input type="text" class="form-control" formControlName="nome"
+                [ngClass]="{'is-invalid': f.nome.errors && f.nome.touched}" placeholder="Insira o nome" />
+              <div class="invalid-feedback">
+                Nome é obrigatório.
               </div>
-          </form>
+            </div>
+            <div class="form-group col-sm-6">
+              <label>Sobrenome</label>
+              <input type="text" class="form-control" formControlName="sobrenome"
+                [ngClass]="{'is-invalid': f.sobrenome.errors && f.sobrenome.touched}" placeholder="Insira o sobrenome" />
+              <div class="invalid-feedback">
+                Sobrenome é obrigatório.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>E-mail</label>
+            <input type="text" formControlName="email" class="form-control"
+              [ngClass]="{ 'is-invalid': f.email.errors && f.email.touched }" />
+            <div *ngIf="f.email.errors && f.email.touched" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">e-mail é obrigatório</div>
+              <div *ngIf="f.email.errors.email">e-mail precisa ser um endereço válido.</div>
+            </div>
+          </div>
+          <!-- <div class="form-group">
+            <label for="">Usuario:</label>
+            <input class="form-control" type="text" formControlName="userName"
+              [ngClass]="{'is-invalid': f.userName.errors && f.userName.touched}" placeholder="Insira o nome de Usuário" />
+            <div class="invalid-feedback">
+              Usuário é obrigatório.
+            </div>
+          </div> -->
+          <div class="row">
+            <div class="form-group col-sm">
+              <label>Senha</label>
+              <input type="password" formControlName="senha" placeholder="insira a senha" class="form-control"
+                [ngClass]="{ 'is-invalid': f.senha.errors && f.senha.touched }" />
+              <div *ngIf="f.senha.errors && f.senha.touched" class="invalid-feedback">
+                <div *ngIf="f.senha.errors.required">Senha é obrigatório</div>
+                <div *ngIf="f.senha.errors.minlength">Senha precisa ter pelo menos 6 caracteres</div>
+              </div>
+            </div>
+            <div class="form-group col-sm">
+              <label>Confirmar Senha</label>
+              <input type="password" placeholder="confirme a senha" formControlName="confirmeSenha" class="form-control"
+                [ngClass]="{ 'is-invalid': f.confirmeSenha.errors && f.confirmeSenha.touched }" />
+              <div *ngIf="f.confirmeSenha.errors && f.confirmeSenha.touched" class="invalid-feedback">
+                <div *ngIf="f.confirmeSenha.errors.required">Confirmação de senha é Obrigatório</div>
+                <div *ngIf="f.confirmeSenha.errors.mustMatch">Repetir a senha é obrigatório.</div>
+              </div>
+            </div>
+          </div>
+          <div class="row p-1 mb-3">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customCheck1"/>
+              <label class="custom-control-label ms-1">Eu concordo com os <a href="#">Termos de Uso</a>.</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-12">
+              <button class="btn btn-lg btn-primary d-flex align-items-center ">
+                Criar conta
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
   </div>
 </div>
