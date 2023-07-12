@@ -2,7 +2,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProEventos.Dominio\ProEventos.Dominio.csproj" />
-    <ProjectReference Include="..\ProEventos.Aplicacao\ProEventos.Aplicacao.csproj" />
   </ItemGroup>
 
   <ItemGroup>
