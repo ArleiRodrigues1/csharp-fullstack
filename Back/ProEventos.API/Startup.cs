@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using System;
 using AutoMapper;
 using ProEventos.Application;
@@ -29,7 +30,9 @@ namespace ProEventos.API
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
+            services.AddDbContext<EventContext>(options
+            => options.UseSqlServer(Configuration.GetConnectionString("EventContext") 
+            builder => Builder.MigrationsAssembly("EventContext")));
 
             services.AddControllers()
                 .AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = 

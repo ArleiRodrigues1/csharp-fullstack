@@ -1,34 +1,34 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { EventosComponent } from './components/eventos/eventos.component'
-import { PalestrantesComponent } from './components/palestrantes/palestrantes.component'
+import { EventsComponent } from './components/events/events.component'
+import { PalestrantsComponent } from './components/palestrants/palestrants.component'
 
 import { PerfilComponent } from './components/user/perfil/perfil.component'
 
 import { DashboardComponent } from './components/dashboard/dashboard.component'
-import { ContatosComponent } from './components/contatos/contatos.component'
+import { ContactsComponent } from './components/contacts/contacts.component'
 
-import { EventoDetalheComponent } from './components/eventos/evento-detalhe/evento-detalhe.component';
-import { EventoListaComponent } from './components/eventos/evento-lista/evento-lista.component';
+import { EventsDetailsComponent } from './components/events/events-details/events-details.component';
 
 import { UserComponent } from './components/user/user.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegistrationComponent } from './components/user/registration/registration.component';
+import { EventsListComponent } from './components/events/events-list/events-list.component';
 
 const routes: Routes = [
-  { path: 'eventos', redirectTo: 'eventos/lista' },
+  { path: 'events', redirectTo: 'events/List' },
   {
-    path: 'eventos', component: EventosComponent,
+    path: 'events', component: EventsComponent,
     children: [
-      { path: 'detalhe/:id', component: EventoDetalheComponent },
-      { path: 'detalhe', component: EventoDetalheComponent },
-      { path: 'lista', component: EventoListaComponent },
+      { path: 'details/:id', component: EventsDetailsComponent },
+      { path: 'details', component: EventsDetailsComponent },
+      { path: 'list', component: EventsListComponent },
     ]
   },
-  { path: 'palestrantes', component: PalestrantesComponent },
+  { path: 'palestrants', component: PalestrantsComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'contatos', component: ContatosComponent },
+  { path: 'contacts', component: ContactsComponent },
   {
     path: 'user', component: UserComponent,
     children: [
